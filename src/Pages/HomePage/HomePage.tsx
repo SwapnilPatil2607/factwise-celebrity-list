@@ -19,6 +19,7 @@ const Search = styled.input`
   border: 1px solid black;
   margin: 10px 0px;
 `;
+
 const HomePage = () => {
   const [list, setList] = React.useState([...celebList]);
 
@@ -33,6 +34,13 @@ const HomePage = () => {
       setList([...celebList]);
     }
   };
+
+  const onDelete = (id: string | number) => {
+    const searchedList = list.filter((item) => {
+      return item.id !== id;
+    });
+    setList(searchedList);
+  };
   return (
     <div style={{ width: "fit-content", margin: "auto" }}>
       <h4>List View</h4>
@@ -42,7 +50,11 @@ const HomePage = () => {
       />
       <List>
         {list.map((celebDetails) => (
-          <Accordion key={celebDetails.id} details={celebDetails} />
+          <Accordion
+            onDelete={onDelete}
+            key={celebDetails.id}
+            details={celebDetails}
+          />
         ))}
       </List>
     </div>

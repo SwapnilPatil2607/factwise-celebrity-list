@@ -21,7 +21,13 @@ interface accordionDetails {
   description: string;
 }
 
-const Accordion = ({ details }: { details: accordionDetails }) => {
+const Accordion = ({
+  details,
+  onDelete,
+}: {
+  details: accordionDetails;
+  onDelete: () => void;
+}) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Container>
@@ -66,7 +72,7 @@ const Accordion = ({ details }: { details: accordionDetails }) => {
           </div>
 
           <ActionButtons>
-            <button>Delete</button>
+            <button onClick={() => onDelete(details.id)}>Delete</button>
             <button>Edit</button>
           </ActionButtons>
         </>
