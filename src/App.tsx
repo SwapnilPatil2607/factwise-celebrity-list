@@ -1,7 +1,10 @@
+import * as React from "react";
+import HomePage from "./Pages/HomePage/HomePage";
+
 function App() {
   return (
     <>
-      <div>FactWise</div>
+      <HomePage />
     </>
   );
 }
