@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 400px;
-
   padding: 10px 15px;
   border-radius: 10px;
   border: 1px solid black;
@@ -47,6 +46,7 @@ const UserDetails = styled.div`
 
 const Description = styled.div`
   width: 100%;
+  padding-bottom: 20px;
 `;
 
 const ActionButtons = styled.div`

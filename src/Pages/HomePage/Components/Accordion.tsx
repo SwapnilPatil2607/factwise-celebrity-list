@@ -46,21 +46,21 @@ const Accordion = ({ details }: { details: accordionDetails }) => {
           <div>
             <UserDetails>
               <div>
-                <div>Age</div>
+                <h5>Age</h5>
                 <div>value</div>
               </div>
               <div>
-                <div>Gender</div>
+                <h5>Gender</h5>
                 <div>{details.gender}</div>
               </div>
               <div>
-                <div>Country</div>
+                <h5>Country</h5>
                 <div>{details.country}</div>
               </div>
             </UserDetails>
 
             <Description>
-              <h5>Description</h5>
+              <h4>Description</h4>
               <div>{details.description}</div>
             </Description>
           </div>
