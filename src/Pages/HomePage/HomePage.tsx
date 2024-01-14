@@ -20,12 +20,28 @@ const Search = styled.input`
   margin: 10px 0px;
 `;
 const HomePage = () => {
+  const [list, setList] = React.useState([...celebList]);
+
+  const onSearch = (value: string) => {
+    const searchedList = celebList.filter((item) => {
+      const word = item.first + " " + item.last;
+      return word.toLocaleLowerCase().includes(value.toLocaleLowerCase());
+    });
+    setList(searchedList);
+
+    if (!value.length) {
+      setList([...celebList]);
+    }
+  };
   return (
     <div style={{ width: "fit-content", margin: "auto" }}>
       <h4>List View</h4>
-      <Search placeholder="Search User" />
+      <Search
+        onChange={(e) => onSearch(e.target.value)}
+        placeholder="Search User"
+      />
       <List>
-        {celebList.map((celebDetails) => (
+        {list.map((celebDetails) => (
           <Accordion key={celebDetails.id} details={celebDetails} />
         ))}
       </List>
