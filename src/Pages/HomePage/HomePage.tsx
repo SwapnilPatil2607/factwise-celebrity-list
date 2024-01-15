@@ -41,6 +41,20 @@ const HomePage = () => {
     });
     setList(searchedList);
   };
+
+  const onSave = (data: object, id: string | number) => {
+    const searchedList = list.map((item) => {
+      if (id == item.id) {
+        return {
+          ...item,
+          ...data,
+        };
+      } else {
+        return item;
+      }
+    });
+    setList(searchedList);
+  };
   return (
     <div style={{ width: "fit-content", margin: "auto" }}>
       <h4>List View</h4>
@@ -52,6 +66,7 @@ const HomePage = () => {
         {list.map((celebDetails) => (
           <Accordion
             onDelete={onDelete}
+            onSave={onSave}
             key={celebDetails.id}
             details={celebDetails}
           />
