@@ -28,8 +28,8 @@ const Accordion = ({
   onSave,
 }: {
   details: accordionDetails;
-  onDelete: () => void;
-  onSave: () => void;
+  onDelete: (id: string | number) => void;
+  onSave: (data: object, id: string | number) => void;
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isEdit, setIsEdit] = React.useState(false);

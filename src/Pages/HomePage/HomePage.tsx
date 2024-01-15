@@ -59,7 +59,9 @@ const HomePage = () => {
     <div style={{ width: "fit-content", margin: "auto" }}>
       <h4>List View</h4>
       <Search
-        onChange={(e) => onSearch(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          onSearch(e.target.value)
+        }
         placeholder="Search User"
       />
       <List>
